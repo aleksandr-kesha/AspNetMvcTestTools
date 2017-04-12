@@ -1,6 +1,5 @@
 ﻿using System.Web.Mvc;
 using MvcAppTestToolsProject.Models;
-using Ninject;
 
 namespace MvcAppTestToolsProject.Controllers
 {
@@ -24,12 +23,7 @@ namespace MvcAppTestToolsProject.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            //var kernel = new StandardKernel();
-            //kernel.Bind<IValueCalculator>().To<ProductCalc>();
-
-            //var calc = kernel.Get<IValueCalculator>();
-
-            var cart = new ShoppingCart(_calculator) { Products = _products };
+           var cart = new ShoppingCart(_calculator) { Products = _products };
 
             var totalValue = cart.CalculateProductTotal();
 
